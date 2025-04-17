@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Aydin Buswell | Portfolio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Add Three.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/loaders/DRACOLoader.js"></script>
+  </head>
+  <body>
+    <div class="overlay" id="overlay"></div>
+    <nav>
+      <div class="container">
+        <a href="#" class="logo">
+          <span class="highlight">Aydin</span> Buswell
+        </a>
+        
+        <div class="menu-toggle" id="menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#resume">Resume</a></li>
+          <li><a href="#contact" class="nav-cta">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <header class="hero-section">
+      <div class="animated-bg">
+        <ul class="circles">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+        <div class="particles"></div>
+      </div>
+      
+      <div class="hero-content">
+        <div class="container">
+          <div class="hero-grid">
+            <div class="hero-text">
+              <h1>Hi, I'm <span class="gradient-text">Aydin Buswell</span></h1>
+              <div class="typewriter" id="typewriter"></div>
+              
+              <div class="hero-cta-buttons">
+                <a href="#projects" class="btn-primary">View My Work</a>
+                <a href="#contact" class="btn-secondary">Get In Touch</a>
+              </div>
+              
+              <div class="social-icons">
+                <a href="https://github.com/owitness" target="_blank">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/aydin-buswell-978242283/" target="_blank">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                </a>
+                <a href="mailto:lilmacalbee@gmail.com">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                </a>
+              </div>
+            </div>
+            
+            <div class="hero-model-container">
+              <div id="hero-model-viewer"></div>
+              <div class="model-controls">
+                <button class="model-btn active" data-model="iphone">iPhone</button>
+                <button class="model-btn" data-model="gpu">GPU</button>
+                <button class="model-btn" data-model="macbook">MacBook</button>
+                <button class="model-btn" data-model="skis">Skis</button>
+                <button class="model-btn" data-model="car">Car</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <section id="projects">
+        <hgroup>
+          <h2>GitHub Projects</h2>
+          <h3>Check out my latest work and contributions</h3>
+        </hgroup>
+        <div id="github-projects"></div>
+      </section>
+
+      <div id="resume">
+        <h3>My Resume</h3>
+        <p>Want to know more about my skills and experience?</p>
+        <a href="/mnt/data/Buswell Resume.pdf" target="_blank" role="button">Download Resume</a>
+      </div>
+      
+      <!-- Interactive Game Section -->
+      <section id="game-section">
+        <hgroup>
+          <h2>Memory Match Game</h2>
+          <h3>Test your memory with this fun game!</h3>
+        </hgroup>
+        <div class="game-description">
+          <p>Take a break and play a quick memory matching game. Find all the pairs to win!</p>
+          <button id="start-game" class="btn-primary">Start Game</button>
+        </div>
+        <div id="game-container" class="memory-game">
+          <!-- Game cards will be generated by JavaScript -->
+        </div>
+        <div id="game-stats">
+          <div class="stat">
+            <span>Moves:</span>
+            <span id="moves-count">0</span>
+          </div>
+          <div class="stat">
+            <span>Time:</span>
+            <span id="time">00:00</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="container">
+      <section id="contact">
+        <article>
+          <hgroup>
+            <h2>Get In Touch</h2>
+            <h3>Let's connect and discuss how we can work together</h3>
+          </hgroup>
+          <form class="grid">
+            <input type="text" id="firstname" name="firstname" placeholder="Your name" aria-label="Name" required />
+            <input type="email" id="email" name="email" placeholder="Your email" aria-label="Email" required />
+            <button type="submit" onclick="event.preventDefault()">Send Message</button>
+          </form>
+        </article>
+      </section>
+    </div>
+
+    <footer>
+      <div class="container">
+        <a href="https://github.com/owitness" target="_blank">GitHub</a> • 
+        <a href="https://www.linkedin.com/in/aydin-buswell-978242283/" target="_blank">LinkedIn</a> •
+        <a href="mailto:lilmacalbee@gmail.com">Email</a>
+        <p><small>© 2025 Aydin Buswell. All rights reserved.</small></p>
+      </div>
+    </footer>
+
+    <!-- Theme toggle button -->
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light mode">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+    </button>
+
+    <!-- Custom Chat Button -->
+    <button id="chat-button" class="chat-button" aria-label="Open chat">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+      <span>Chat with me</span>
+    </button>
+
+    <!-- Zapier Chatbot -->
+    <div id="chatbot-container" style="display: none;">
+      <script async type='module' src='https://interfaces.zapier.com/assets/web-components/zapier-interfaces/zapier-interfaces.esm.js'></script>
+      <zapier-interfaces-chatbot-embed is-popup='false' chatbot-id='cm8xyt1dr000sa1nfddjz06uz'></zapier-interfaces-chatbot-embed>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
