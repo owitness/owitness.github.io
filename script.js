@@ -511,7 +511,7 @@ const models = {
   },
   car: {
     path: 'models/car.glb',
-    scale: 1.5,
+    scale: 1,
     position: { x: 0, y: -0.5, z: 0 },
     rotation: { x: 0, y: Math.PI / 4, z: 0 }
   }
