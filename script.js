@@ -473,6 +473,37 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // 8-bit glasses toggle functionality
+  const profilePic = document.getElementById('profile-pic');
+  const glassesContainer = document.getElementById('glasses-container');
+  
+  if (profilePic && glassesContainer) {
+    profilePic.addEventListener('click', () => {
+      if (!glassesContainer.classList.contains('active')) {
+        // Adding the glasses - simple animation
+        glassesContainer.style.transform = 'translate(-50%, -150%) scale(1)';
+        glassesContainer.style.opacity = '1';
+        glassesContainer.style.display = 'block';
+        
+        // Drop in animation
+        setTimeout(() => {
+          glassesContainer.style.transform = 'translate(-50%, -50%) scale(1)';
+          glassesContainer.classList.add('active');
+        }, 100);
+      } else {
+        // Removing the glasses
+        glassesContainer.classList.remove('active');
+        glassesContainer.style.transform = 'translate(-50%, -50%) scale(0)';
+      }
+      
+      // Add a quick animation when toggling glasses
+      profilePic.style.transform = 'scale(0.97)';
+      setTimeout(() => {
+        profilePic.style.transform = 'scale(1)';
+      }, 150);
+    });
+  }
 });
 
 // Three.js Scene Setup for Hero Section

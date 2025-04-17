@@ -1144,4 +1144,76 @@ footer a:hover {
     left: 20px;
     bottom: 90px;
   }
-} 
+}
+
+/* Profile picture styles */
+.profile-picture-container {
+  width: 180px;
+  height: 180px;
+  margin: 0 auto 2rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top:5px;
+  cursor: pointer;
+}
+
+.profile-picture {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 25%;
+  position: relative;
+  z-index: 2;
+  transition: transform 0.3s ease;
+  border: 4px solid rgba(255, 255, 255, 0.2);
+}
+
+.profile-picture-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  background: linear-gradient(90deg, var(--primary), #8b5cf6, #ec4899);
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.4s ease;
+  z-index: 1;
+}
+
+.profile-picture-container:hover::before {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.profile-picture-container:hover .profile-picture {
+  transform: scale(0.95);
+  box-shadow: 0 0 25px rgba(59, 130, 246, 0.5);
+}
+
+@media (max-width: 992px) {
+  .profile-picture-container {
+    margin: 0 auto 2rem;
+  }
+}
+
+/* 8-bit glasses styles */
+.glasses-container {
+  position: absolute;
+  z-index: 10;
+  top: 47%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  pointer-events: none; /* Allows clicks to pass through to profile pic */
+  width: 90px;
+}
+
+.glasses-container.active {
+  transform: translate(-50%, -50%) scale(1);
+}
