@@ -40,7 +40,10 @@ document.addEventListener('DOMContentLoaded', () => {
       'Frontend Developer',
       'UI/UX Enthusiast',
       'Problem Solver',
-      'Creative Thinker'
+      'Creative Thinker',
+      'Automation Specialist',
+      'Computer Builder',
+      'Collaberator'
     ];
     
     let phraseIndex = 0;
